@@ -13,11 +13,8 @@ A comprehensive collection of **Advanced Java Programming** laboratory practical
 - [Experiment 2: Model-View-Controller (MVC) Architecture](#-experiment-2-model-view-controller-mvc-architecture)
 - [Experiment 3: TCP Socket Programming (Client-Server Communication)](#-experiment-3-tcp-socket-programming-client-server-communication)
 - [Experiment 4: Java Database Connectivity (JDBC) CRUD Operations](#-experiment-4-java-database-connectivity-jdbc-crud-operations)
-- [Experiment 5: Database-Driven GUI Application (Swing + JDBC Integration)](#-experiment-5-database-driven-gui-application-swing--jdbc-integration)
-- [Experiment 6: Remote Method Invocation (Java RMI Distributed Computing)](#-experiment-6-remote-method-invocation-java-rmi-distributed-computing)
-- [Experiment 7: Web Server Environment Setup & Application Deployment (Apache Tomcat)](#-experiment-7-web-server-environment-setup--application-deployment-apache-tomcat)
-- [Experiment 8: Java Web Development with Servlets, Filters, and Listeners](#-experiment-8-java-web-development-with-servlets-filters-and-listeners)
-- [Experiment 9 / Capstone: Enterprise Cycling E-Commerce Platform (BikeIsNice)](#-experiment-9--capstone-enterprise-cycling-e-commerce-platform-bikeisnice)
+- [Experiment 5: Remote Method Invocation (Java RMI Distributed Computing)](#-experiment-6-remote-method-invocation-java-rmi-distributed-computing)
+- [Experiment 6: Web Server Environment Setup & Application Deployment (Apache Tomcat)](#-experiment-7-web-server-environment-setup--application-deployment-apache-tomcat)
 
 ---
 
@@ -29,11 +26,8 @@ A comprehensive collection of **Advanced Java Programming** laboratory practical
 | **02** | **MVC Pattern Calculator Application** | Java Swing, MVC Architecture | [`calc/`](calc/) |
 | **03** | **TCP Socket Client-Server Echo System** | Java Networking (`java.net`), Sockets, I/O Streams | [`server-client/`](server-client/) |
 | **04** | **Database Connectivity & SQL Operations (JDBC)** | JDBC 4.2, MySQL, PreparedStatements | [`jdbc/exp3/`](jdbc/exp3/) |
-| **05** | **Integrated GUI with Database Storage** | Swing GUI, JDBC, MySQL, Input Validation | [`strjdbc/`](strjdbc/) |
-| **06** | **Distributed Computing via Java RMI** | Java RMI, Remote Interfaces, RMI Registry | [`Remote-Method-Invocation/`](Remote-Method-Invocation/) |
-| **07** | **Servlet Container & Web Server Deployment** | Apache Tomcat 9, WAR Deployment, Web XML | [`apache-tomcat-9.0.121/`](apache-tomcat-9.0.121/) |
-| **08** | **Java Servlets, Sessions, Filters & Listeners** | Jakarta EE Servlet API, Session Tracking, Filters | [`servent/`](servent/) |
-| **09** | **Full-Stack Enterprise E-Commerce Platform** | Jakarta EE 11, Servlets 6.1, JSP 3.1, JSTL, MySQL DAO, Swing Desktop Admin, Sockets & RMI | [`BikeIsNice/`](BikeIsNice/) |
+| **05** | **Distributed Computing via Java RMI** | Java RMI, Remote Interfaces, RMI Registry | [`Remote-Method-Invocation/`](Remote-Method-Invocation/) |
+| **06** | **Servlet Container & Web Server Deployment** | Apache Tomcat 9, WAR Deployment, Web XML | [`apache-tomcat-9.0.121/`](apache-tomcat-9.0.121/) |
 
 ---
 
@@ -209,56 +203,7 @@ java -cp "lib/*:bin" Main
 
 ---
 
-## 🧪 Experiment 5: Database-Driven GUI Application (Swing + JDBC Integration)
-
-### 🎯 Aim & Objective
-To develop a database-integrated desktop application by connecting a Java Swing GUI form to a MySQL database, persisting user registration data through JDBC.
-
-### 📂 Directory & File Structure
-```
-strjdbc/
-├── lib/
-│   └── mysql-connector-j-26.7.0.jar   # MySQL JDBC Driver
-├── src/
-│   └── StudentRegistration.java       # Full Swing GUI with JDBC persistence
-├── bin/                               # Compiled classes
-└── README.md
-```
-
-### 💡 Key Concepts & Implementation Details
-- **Integrated Architecture**: Merges interactive Swing UI (`JFrame`, `JTextField`, `JRadioButton`, `JCheckBox`) with a JDBC data persistence layer.
-- **Robust Input Validation**: Verifies that required fields are non-empty and terms are accepted before executing database calls.
-- **Database Persistence**: Employs `PreparedStatement` to insert sanitized student records (`name`, `roll`, `gender`, `branch`) into table `streg`.
-- **Thread Safety**: Dispatches UI rendering via `SwingUtilities.invokeLater()`.
-
-### 🗄️ Database Setup
-```sql
-CREATE DATABASE IF NOT EXISTS collage_db;
-USE collage_db;
-
-CREATE TABLE IF NOT EXISTS streg (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    roll VARCHAR(50) NOT NULL,
-    gender VARCHAR(10),
-    branch VARCHAR(50)
-);
-```
-
-### 🚀 Compilation & Execution
-```bash
-cd strjdbc
-
-# Compile
-javac -cp "lib/*:src" src/StudentRegistration.java -d bin
-
-# Run
-java -cp "lib/*:bin" StudentRegistration
-```
-
----
-
-## 🧪 Experiment 6: Remote Method Invocation (Java RMI Distributed Computing)
+## 🧪 Experiment 5: Remote Method Invocation (Java RMI Distributed Computing)
 
 ### 🎯 Aim & Objective
 To build a distributed client-server application using Java Remote Method Invocation (RMI), allowing a remote client to execute object methods hosted on a remote server.
@@ -297,7 +242,7 @@ java client
 
 ---
 
-## 🧪 Experiment 7: Web Server Environment Setup & Application Deployment (Apache Tomcat)
+## 🧪 Experiment 6: Web Server Environment Setup & Application Deployment (Apache Tomcat)
 
 ### 🎯 Aim & Objective
 To configure and manage an enterprise Java Servlet Container and Web Server (**Apache Tomcat 9**), understand the container directory structure, configure deployment descriptors, and deploy web applications.
@@ -335,97 +280,6 @@ chmod +x *.sh
 # Stop Tomcat Server
 ./shutdown.sh
 ```
-
----
-
-## 🧪 Experiment 8: Java Web Development with Servlets, Filters, and Listeners
-
-### 🎯 Aim & Objective
-To develop a dynamic Java Web Application utilizing the Servlet API (Jakarta EE), demonstrating form processing, session tracking (`HttpSession`), request filtering (`@WebFilter`), and application lifecycle events (`@WebListener`).
-
-### 📂 Directory & File Structure
-```
-servent/
-├── pom.xml                 # Maven build file configured for Jakarta Servlet API
-└── src/
-    └── main/
-        ├── java/com/servelent/
-        │   ├── HelloServlet.java   # Form processing & RequestDispatcher forward
-        │   ├── LoginServlet.java   # Authentication & session creation
-        │   ├── HomeServlet.java    # Protected user home page
-        │   ├── AuthFilter.java     # Security filter restricting /home
-        │   ├── AppListener.java    # ServletContextListener lifecycle logger
-        │   └── Main.java           # Runner / helper
-        └── webapp/
-            └── index.html          # Login and entry HTML form
-```
-
-### 💡 Key Concepts & Implementation Details
-- **`HelloServlet` (`@WebServlet("/hello")`)**: Extracts form parameters (`request.getParameter()`), sets request attributes (`request.setAttribute()`), and dispatches to views.
-- **`LoginServlet` (`@WebServlet("/login")`)**: Authenticates credentials, creates a user session via `request.getSession()`, and sets session attributes.
-- **`HomeServlet` (`@WebServlet("/home")`)**: Displays personalized content for authenticated users with active sessions.
-- **`AuthFilter` (`@WebFilter("/home")`)**: Intercepts requests to `/home`, checks for valid user sessions, and redirects unauthorized users back to `index.html`.
-- **`AppListener` (`@WebListener`)**: Implements `ServletContextListener` to log messages upon application startup (`contextInitialized`) and shutdown (`contextDestroyed`).
-
-### 🚀 Building and Deploying with Maven
-```bash
-cd servent
-
-# Build WAR archive using Maven
-mvn clean package
-
-# Copy generated WAR into Tomcat webapps
-cp target/servlet-1.0-SNAPSHOT.war ../apache-tomcat-9.0.121/webapps/
-
-# Start Tomcat and browse:
-# http://localhost:8080/servlet-1.0-SNAPSHOT/
-```
-
----
-
-## 🧪 Experiment 9 / Capstone: Enterprise Cycling E-Commerce Platform (BikeIsNice)
-
-### 🎯 Aim & Objective
-To architect and implement an enterprise-grade full-stack Java web application and distributed system (**BikeIsNice** / ShopSphere) synthesizing all Advanced Java concepts: Jakarta Servlets, JSP/JSTL views, custom tags, relational MySQL database with 12 tables, JDBC DAO design pattern, session security filters, native Java Swing desktop administration dashboard, and standalone distributed networking modules (Sockets & RMI).
-
-### 📂 Directory & File Structure
-```
-BikeIsNice/
-├── pom.xml                         # Maven project configuration (Jakarta EE 11)
-├── shopsphere.sql                  # Complete MySQL schema (12 tables + seed data)
-├── test-networking.sh              # Automated test runner for Sockets and RMI
-├── README.md                       # Dedicated detailed documentation
-├── src/main/
-│   ├── java/com/shopsphere/
-│   │   ├── controller/             # Jakarta Servlets (Cart, Checkout, Login, Product, Register)
-│   │   ├── dao/                    # JDBC DAO Layer (PreparedStatements & connection pooling)
-│   │   ├── desktop/                # Native Swing Administration GUI (AdminDashboard, LoginFrame)
-│   │   ├── filter/                 # Security Filters (AdminFilter, AuthenticationFilter)
-│   │   ├── model/                  # Domain POJOs & Entities (implements Serializable)
-│   │   ├── network/
-│   │   │   ├── rmi/                # Java RMI inventory service & client
-│   │   │   └── socket/             # Low-level TCP Socket inventory server & client
-│   │   ├── service/                # Business logic & zero-trust server checkout engine
-│   │   └── util/                   # DBConnection & PBKDF2 Password Hashing
-│   └── webapp/
-│       ├── index.jsp               # Storefront portal & catalog router
-│       ├── products.jsp            # Product catalog with category filters
-│       ├── cart.jsp                # Interactive shopping cart
-│       ├── checkout.jsp            # Secure checkout workflow
-│       ├── admin/                  # Protected manager views (dashboard, orders)
-│       └── WEB-INF/tags/           # Custom reusable JSP tags (productCard, rating)
-└── target/
-    └── shopsphere.war              # Packaged ready-to-deploy Web Application Archive
-```
-
-### 💡 Enterprise Features & Advanced Java Highlights
-1. **Full-Stack Web Architecture**: Jakarta Servlet 6.1, JSP 3.1, JSTL 3.0, and Bootstrap 5.3.
-2. **Zero-Trust Pricing & Checkout Engine**: Computes subtotals, taxes, and promotional coupons on the server to prevent client-side price tampering.
-3. **Database & Persistence**: 12 relational MySQL tables (`users`, `products`, `orders`, `order_items`, `cart_items`, `categories`, `coupons`, `payments`, etc.) utilizing pure `PreparedStatement` queries.
-4. **Desktop Administrator GUI**: Java Swing desktop app with native OS Pluggable Look and Feel (PLAF), `JTabbedPane`, and `JTable` inside `JScrollPane` for real-time inventory and order management.
-5. **Distributed Networking Modules**:
-   - **TCP Sockets**: `SocketInventoryServer` & `SocketInventoryClient` implementing a custom inventory protocol.
-   - **Java RMI**: `RmiInventoryServer` & `RmiInventoryClient` with remote procedure calls for inventory status updates.
 
 
 ## 👨‍💻 Repository Author
