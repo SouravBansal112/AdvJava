@@ -15,7 +15,7 @@ A comprehensive collection of **Advanced Java Programming** laboratory practical
 - [Experiment 4: Java Database Connectivity (JDBC) CRUD Operations](#-experiment-4-java-database-connectivity-jdbc-crud-operations)
 - [Experiment 5: Remote Method Invocation (Java RMI Distributed Computing)](#-experiment-6-remote-method-invocation-java-rmi-distributed-computing)
 - [Experiment 6: Web Server Environment Setup & Application Deployment (Apache Tomcat)](#-experiment-7-web-server-environment-setup--application-deployment-apache-tomcat)
-
+- project : Shopsphere project for an e commerce platform
 ---
 
 ## 📑 Index of Experiments
@@ -28,7 +28,7 @@ A comprehensive collection of **Advanced Java Programming** laboratory practical
 | **04** | **Database Connectivity & SQL Operations (JDBC)** | JDBC 4.2, MySQL, PreparedStatements | [`jdbc/exp3/`](jdbc/exp3/) |
 | **05** | **Distributed Computing via Java RMI** | Java RMI, Remote Interfaces, RMI Registry | [`Remote-Method-Invocation/`](Remote-Method-Invocation/) |
 | **06** | **Servlet Container & Web Server Deployment** | Apache Tomcat 9, WAR Deployment, Web XML | [`apache-tomcat-9.0.121/`](apache-tomcat-9.0.121/) |
-
+| **07** | **ShopSphere project** |  | [`ShopSphere/`](ShopSphere/) |
 ---
 
 ## 🛠️ Prerequisites & System Setup
