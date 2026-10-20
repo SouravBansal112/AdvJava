@@ -28,7 +28,7 @@ A comprehensive collection of **Advanced Java Programming** laboratory practical
 | **04** | **Database Connectivity & SQL Operations (JDBC)** | JDBC 4.2, MySQL, PreparedStatements | [`jdbc/exp3/`](jdbc/exp3/) |
 | **05** | **Distributed Computing via Java RMI** | Java RMI, Remote Interfaces, RMI Registry | [`Remote-Method-Invocation/`](Remote-Method-Invocation/) |
 | **06** | **Servlet Container & Web Server Deployment** | Apache Tomcat 9, WAR Deployment, Web XML | [`apache-tomcat-9.0.121/`](apache-tomcat-9.0.121/) |
-| **07** | **ShopSphere project** |  | [`ShopSphere/`](ShopSphere/) |
+| **07** | **ShopSphere project** | Jakarta Servlets + JSP/JSTL + JDBC (HikariCP) + MySQL, | [`ShopSphere/`](ShopSphere/) |
 ---
 
 ## 🛠️ Prerequisites & System Setup
