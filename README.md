@@ -6,6 +6,7 @@ A comprehensive collection of **Advanced Java Programming** laboratory practical
 
 ## 📋 Table of Contents
 
+
 - [Index of Experiments](#-index-of-experiments)
 - [Prerequisites & System Setup](#-prerequisites--system-setup)
 - [Experiment 1: GUI Form Development using Java Swing](#-experiment-1-gui-form-development-using-java-swing)
@@ -426,27 +427,8 @@ BikeIsNice/
    - **TCP Sockets**: `SocketInventoryServer` & `SocketInventoryClient` implementing a custom inventory protocol.
    - **Java RMI**: `RmiInventoryServer` & `RmiInventoryClient` with remote procedure calls for inventory status updates.
 
-### 🚀 Running the Capstone Platform
-```bash
-cd BikeIsNice
-
-# Step 1: Import Database Schema & Seed Data
-mysql -u root -ppassword < shopsphere.sql
-
-# Step 2: Build the WAR package
-mvn clean package
-
-# Step 3: Run the Swing Desktop Admin Application
-java -cp target/classes com.shopsphere.desktop.LoginFrame
-
-# Step 4: Run the Standalone Networking Test Suite (Sockets + RMI)
-./test-networking.sh
-```
-
----
 
 ## 👨‍💻 Repository Author
 
-- **Author**: Sahil Sepat
-- **Course**: Advanced Java Laboratory (ADJ Lab)
-- **Repository**: [`adjrepo`](https://github.com/sahil1205-jat/adj)
+- **Author**: Sourav bansal
+- **Course**: Advanced Java Laboratory 
